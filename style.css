@@ -70,30 +70,30 @@ button:hover {
 #graficoNoAmortiguadaCanvas,
 #graficoAmortiguadaCanvas {
     margin-top: 20px;
-    height: 400px; /* Aumentar la altura de los gráficos */
+    height: 400px; /* Aumentar la altura  */
 }
 
 
 #containerResultados .btn-secondary {
-    background-color: #2e8bdd; /* Color base */
-    border-color: #4689c4; /* Borde base */
+    background-color: #2e8bdd; 
+    border-color: #4689c4; /* Borde */
     color: #fff; /* Texto */
     font-size: 16px; /* Tamaño del texto */
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* Animación suave */
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
 }
 
 /* Hover del botón */
 #containerResultados .btn-secondary:hover {
-    background-color: #1c1f22; /* Color al pasar el mouse */
-    border-color: #495057; /* Borde al pasar el mouse */
+    background-color: #1c1f22; 
+    border-color: #495057; 
 }
 
 footer img {
-    width: 50px; /* Ajusta el tamaño del logo */
-    height: auto;
+    width: 200px; /* Ajusta el tamaño del logo */
+    height: 200px;
     margin-bottom: 10px;
 }
 
 footer p {
-    margin: 5px 0; /* Reduce el margen entre líneas de texto */
+    margin: 20px ; /* Reduce el margen entre líneas de texto */
 }

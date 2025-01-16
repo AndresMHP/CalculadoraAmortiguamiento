@@ -154,3 +154,4 @@ function ReiniciarFormulario() {
     document.getElementById('k').value = '';
     document.getElementById('c').value = '';
 }
+

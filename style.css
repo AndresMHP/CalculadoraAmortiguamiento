@@ -72,3 +72,28 @@ button:hover {
     margin-top: 20px;
     height: 400px; /* Aumentar la altura de los gráficos */
 }
+
+
+#containerResultados .btn-secondary {
+    background-color: #2e8bdd; /* Color base */
+    border-color: #4689c4; /* Borde base */
+    color: #fff; /* Texto */
+    font-size: 16px; /* Tamaño del texto */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Animación suave */
+}
+
+/* Hover del botón */
+#containerResultados .btn-secondary:hover {
+    background-color: #1c1f22; /* Color al pasar el mouse */
+    border-color: #495057; /* Borde al pasar el mouse */
+}
+
+footer img {
+    width: 50px; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0; /* Reduce el margen entre líneas de texto */
+}

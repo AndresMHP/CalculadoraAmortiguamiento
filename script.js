@@ -145,3 +145,12 @@ function generarGrafico(omega0, omegaK, masa, c) {
         });
     }
 }
+
+
+function ReiniciarFormulario() {
+    document.getElementById('containerResultados').style.display = 'none';
+    document.getElementById('containerFormulario').style.display = 'block';
+    document.getElementById('masa').value = '';
+    document.getElementById('k').value = '';
+    document.getElementById('c').value = '';
+}

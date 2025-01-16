@@ -3,57 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculo de Frecuencia de Movimiento Armonico Simple</title>
+    <title>Cálculo de Frecuencia de Movimiento Armónico Simple</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Sistema MAS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#containerFormulario">Formulario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#containerResultados">Resultados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#graficoFrecuenciaNoAmortiguada">Gráficos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container" id="containerFormulario">
-        <h1>Calculo de la Frecuencia de un Sistema MAS</h1>
-
+    <div class="container mt-4" id="containerFormulario">
+        <h1>Cálculo de la Frecuencia de un Sistema MAS</h1>
         <label for="masa">Masa (kg):</label>
-        <input type="number" id="masa" required>
-
-        <label for="k">Constante de rigidez (N/m):</label>
-        <input type="number" id="k" required>
-
-        <label for="c">Coeficiente de amortiguamiento (N/s):</label>
-        <input type="number" id="c" required>
-
-        <button onclick="CalcularAmortiguamiento()">Calcular</button>
+        <input type="number" id="masa" class="form-control" required>
+        <label for="k" class="mt-2">Constante de rigidez (N/m):</label>
+        <input type="number" id="k" class="form-control" required>
+        <label for="c" class="mt-2">Coeficiente de amortiguamiento (N/s):</label>
+        <input type="number" id="c" class="form-control" required>
+        <button class="btn btn-primary mt-3" onclick="CalcularAmortiguamiento()">Calcular</button>
     </div>
 
-    <!-- Sección de resultados y gráficos (inicialmente oculta) -->
-    <div class="container" id="containerResultados" style="display:none;">
+    <div class="container mt-4" id="containerResultados" style="display:none;">
         <h1>Resultados del Sistema MAS</h1>
-
         <div id="resultadoFrecuencia" class="resultado-cuadro">
-            <p>Frecuencia natural sin amortiguamiento (ω₀):</p>
-            <p><span id="frecuencia"></span> Hz</p>
+            <p>Frecuencia natural sin amortiguamiento (ω₀): <span id="frecuencia"></span> Hz</p>
         </div>
-
         <div id="resultadoTipoAmortiguamiento" class="resultado-cuadro">
-            <p>Tipo de amortiguamiento:</p>
-            <p><span id="tipoAmortiguamiento"></span></p>
+            <p>Tipo de amortiguamiento: <span id="tipoAmortiguamiento"></span></p>
         </div>
-
         <div id="resultadoFrecuenciaAmortiguada" class="resultado-cuadro">
-            <p>Frecuencia amortiguada (ωₖ):</p>
-            <p><span id="frecuenciaAmortiguada"></span> Hz</p>
+            <p>Frecuencia amortiguada (ωₖ): <span id="frecuenciaAmortiguada"></span> Hz</p>
         </div>
-
-        <!-- Gráfico de Onda No Amortiguada -->
         <div id="graficoFrecuenciaNoAmortiguada" class="resultado-cuadro">
             <canvas id="graficoNoAmortiguadaCanvas"></canvas>
         </div>
-
-        <!-- Gráfico de Onda Amortiguada -->
         <div id="graficoFrecuenciaAmortiguada" class="resultado-cuadro">
             <canvas id="graficoAmortiguadaCanvas"></canvas>
         </div>
+        <button class="btn btn-secondary mt-3" onclick="ReiniciarFormulario()">Calcular de Nuevo</button>
     </div>
-
+    <footer class="bg-dark text-light text-center py-4 mt-4">
+        <div class="container">
+            <!-- Logo y nombre de la universidad -->
+            <div class="mb-3">
+                <img src="logo-universidad.png" alt="Logo Universidad" style="width: 50px; height: auto;">
+                <p class="mt-2 mb-0 fw-bold">Universidad de las Americas UDLA</p>
+            </div>
+            <!-- Información personal -->
+            <div>
+                <p class="mb-1">Estudiante: <strong>Marco Andres Hidalgo </strong></p>
+                <p class="mb-1">Carrera: <strong>Ingenieria en Sonido y Acústica</strong></p>
+                <p class="mb-1">Materia: <strong>Fisica de Ondas y señales</strong></p>
+            </div>
+        </div>
+    </footer>
+    
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

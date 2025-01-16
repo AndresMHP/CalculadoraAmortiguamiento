@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Frecuencia de Movimiento Armonico Simple</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container" id="containerFormulario">
+        <h1>Calculo de la Frecuencia de un Sistema MAS</h1>
+
+        <label for="masa">Masa (kg):</label>
+        <input type="number" id="masa" required>
+
+        <label for="k">Constante de rigidez (N/m):</label>
+        <input type="number" id="k" required>
+
+        <label for="c">Coeficiente de amortiguamiento (N/s):</label>
+        <input type="number" id="c" required>
+
+        <button onclick="CalcularAmortiguamiento()">Calcular</button>
+    </div>
+
+    <!-- Sección de resultados y gráficos (inicialmente oculta) -->
+    <div class="container" id="containerResultados" style="display:none;">
+        <h1>Resultados del Sistema MAS</h1>
+
+        <div id="resultadoFrecuencia" class="resultado-cuadro">
+            <p>Frecuencia natural sin amortiguamiento (ω₀):</p>
+            <p><span id="frecuencia"></span> Hz</p>
+        </div>
+
+        <div id="resultadoTipoAmortiguamiento" class="resultado-cuadro">
+            <p>Tipo de amortiguamiento:</p>
+            <p><span id="tipoAmortiguamiento"></span></p>
+        </div>
+
+        <div id="resultadoFrecuenciaAmortiguada" class="resultado-cuadro">
+            <p>Frecuencia amortiguada (ωₖ):</p>
+            <p><span id="frecuenciaAmortiguada"></span> Hz</p>
+        </div>
+
+        <!-- Gráfico de Onda No Amortiguada -->
+        <div id="graficoFrecuenciaNoAmortiguada" class="resultado-cuadro">
+            <canvas id="graficoNoAmortiguadaCanvas"></canvas>
+        </div>
+
+        <!-- Gráfico de Onda Amortiguada -->
+        <div id="graficoFrecuenciaAmortiguada" class="resultado-cuadro">
+            <canvas id="graficoAmortiguadaCanvas"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

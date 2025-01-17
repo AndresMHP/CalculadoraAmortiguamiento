@@ -2,14 +2,25 @@ function CalcularAmortiguamiento() {
     // Obtener los valores de los inputs
     var masa = parseFloat(document.getElementById('masa').value);
     var k = parseFloat(document.getElementById('k').value);
-    var c = parseFloat(document.getElementById('c').value);
-
-    // Verificar que los valores sean válidos
+    var b = parseFloat(document.getElementById('c').value);
+  
+    // Validar si los valores son números
     if (isNaN(masa) || isNaN(k) || isNaN(c)) {
-        alert("Por favor ingresa la masa, la constante de rigidez y el coeficiente de amortiguamiento.");
-        return;
+      alert("Ingrese solo cantidades numéricas.");
+      return;
     }
-
+  
+    // Validar los rangos de k y c
+    if (k < 1 || k > 10000) {
+      alert("El valor de k debe estar entre 200 y 20000.");
+      return;
+    }
+  
+    if (b < 0.1 || b > 1000) //REVISAR ESTA PARTE
+        {
+      alert("El valor de b debe estar entre 28 y 281.");
+      return;
+    }
     // Calcular la frecuencia natural sin amortiguamiento (ω₀ = sqrt(k / m))
     var omega0 = Math.sqrt(k / masa);
 
@@ -53,8 +64,8 @@ function generarGrafico(omega0, omegaK, masa, c) {
     var ctxAmortiguada = document.getElementById('graficoAmortiguadaCanvas').getContext('2d');
 
     // Parámetros de tiempo
-    var tMax = 5; // 5 segundos de simulación
-    var dt = 0.01; // Incremento de tiempo
+    var tMax = 6; // 5 segundos de simulación
+    var dt = 0.02; // Incremento de tiempo
     var tiempos = [];
     var ondaNoAmortiguada = [];
     var ondaAmortiguada = [];
